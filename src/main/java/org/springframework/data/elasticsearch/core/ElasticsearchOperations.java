@@ -191,7 +191,7 @@ public interface ElasticsearchOperations {
      * @param clazz
      * @return
      */
-    <T> LinkedList<T> getObjects(Collection<String> ids, String route, Class<T> clazz);
+    <T> LinkedList<T> queryForPage(Collection<String> ids, String route, Class<T> clazz);
 
     /**
      * Execute a get against elasticsearch for the given id

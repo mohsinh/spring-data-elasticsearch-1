@@ -247,7 +247,7 @@ public class ElasticsearchTemplate implements ElasticsearchOperations {
 	}
 
     @Override
-    public <T> LinkedList<T> getObjects(Collection<String> ids, String route, Class<T> clazz) {
+    public <T> LinkedList<T> queryForPage(Collection<String> ids, String route, Class<T> clazz) {
         ElasticsearchPersistentEntity<T> persistentEntity = getPersistentEntityFor(clazz);
         MultiGetRequestBuilder builder = client.prepareMultiGet();
         for (String id : ids) {

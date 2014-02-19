@@ -166,7 +166,7 @@ public class ElasticsearchTemplateTests {
         elasticsearchTemplate.refresh(SampleEntity.class, true);
 
         // when
-        LinkedList<SampleEntity> sampleEntities = elasticsearchTemplate.getObjects(Arrays.asList(documentId, documentId2), "", SampleEntity.class);
+        LinkedList<SampleEntity> sampleEntities = elasticsearchTemplate.queryForPage(Arrays.asList(documentId, documentId2), "", SampleEntity.class);
         // then
         assertThat(sampleEntities.size(), is(equalTo(2)));
         assertEquals(sampleEntities.get(0), sampleEntity1);
